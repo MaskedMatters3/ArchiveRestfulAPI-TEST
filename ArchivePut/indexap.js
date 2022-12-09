@@ -1,11 +1,15 @@
-function getRequest() {
+function postRequest() {
     const arcCI = document.getElementById('inputId').value
+    const fLinkI = document.getElementById('inputFLink').value
 
-    fetch('http://localhost:3000/' + arcCI, {
-        method: 'GET',
+    const data = { arcC: arcCI, fLink: fLinkI }
+
+    fetch('http://localhost:3000/add', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
+        body: { arcC: arcCI, fLink: fLinkI },
     })
         .then((response) => response.json())
         .then((data) => {
@@ -34,6 +38,4 @@ function getRequest() {
 
             document.getElementById('spanAddInfo').innerHTML = 'ADDITIONAL INFO: ' + error
         })
-
-
 }

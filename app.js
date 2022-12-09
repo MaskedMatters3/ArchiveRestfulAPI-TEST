@@ -48,6 +48,13 @@ app.post('/add', (req, res) => {
       fLink : req.body.fLink,
    }
    arcs.push(arc);
+
+   fs.writeFile(DATA_PATH + "archive.json", JSON.stringify(arcs, null, 2), function(err) {
+      if (err) {
+         return console.error(err);
+      }
+   });
+
    res.send(arc);
 })
 
