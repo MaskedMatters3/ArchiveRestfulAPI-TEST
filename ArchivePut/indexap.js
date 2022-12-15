@@ -1,5 +1,5 @@
 function postRequest() {
-    const arcCI = document.getElementById('inputId').value
+    const arcCI = parseInt(document.getElementById('inputId').value)
     const fLinkI = document.getElementById('inputFLink').value
 
     const data = { arcC: arcCI, fLink: fLinkI }
@@ -9,7 +9,7 @@ function postRequest() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: { arcC: arcCI, fLink: fLinkI },
+        body: JSON.stringify(data),
     })
         .then((response) => response.json())
         .then((data) => {
