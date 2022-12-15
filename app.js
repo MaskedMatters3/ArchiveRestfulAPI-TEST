@@ -30,6 +30,10 @@ app.use((req, res, next) => {
 let arcsD = require(DATA_PATH + "/archive.json");    // Initialize Users
 let arcs =  JSON.parse(JSON.stringify(arcsD));       // Stringify Users
 
+// SHOW UI
+app.get('/', (req, res) => {
+})
+
 // USERS - List all Users
 app.get('/listAll', (req, res) => {
    res.send(arcs);
