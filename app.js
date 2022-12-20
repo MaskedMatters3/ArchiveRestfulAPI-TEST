@@ -30,6 +30,33 @@ app.use((req, res, next) => {
 let arcsD = require(DATA_PATH + "/archive.json");    // Initialize Users
 let arcs =  JSON.parse(JSON.stringify(arcsD));       // Stringify Users
 
+// SHOW UI VIA PORTS - Landing Page
+app.get('/', (req, res) => {
+   res.redirect('/landing')
+})
+
+app.get('/landing', (req, res) => {
+   res.sendFile()
+})
+
+// SHOW UI VIA PORTS - Archive Get
+app.get('/ArcGet/indexag.html', (req, res) => {
+   res.sendFile(__dirname + '/ArchiveGet/indexag.html')
+})
+
+app.get('/ArcGet/indexag.js', (req, res) => {
+   res.sendFile(__dirname + '/ArchiveGet/indexag.js')
+})
+
+// SHOW UI VIA PORTS - Archive Put
+app.get('/ArcPut/indexap.html', (req, res) => {
+   res.sendFile(__dirname + "/ArchivePut/indexap.html")
+})
+
+app.get('ArcPut/indexap.js', (req, res) => {
+   res.sendFile(__dirname + '/ArchivePut/indexap.js')
+})
+
 // USERS - List all Users
 app.get('/listAll', (req, res) => {
    res.send(arcs);
