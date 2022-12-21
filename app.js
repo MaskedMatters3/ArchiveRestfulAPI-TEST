@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/landing', (req, res) => {
-   res.sendFile()
+   res.sendFile(__dirname + '/landing.html')
 })
 
 // SHOW UI VIA PORTS - Archive Get
