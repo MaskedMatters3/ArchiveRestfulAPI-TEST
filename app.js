@@ -36,25 +36,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/landing', (req, res) => {
-   res.sendFile(__dirname + '/landing.html')
-})
-
-// SHOW UI VIA PORTS - Archive Get
-app.get('/ArcGet/indexag.html', (req, res) => {
-   res.sendFile(__dirname + '/ArchiveGet/indexag.html')
-})
-
-app.get('/ArcGet/indexag.js', (req, res) => {
-   res.sendFile(__dirname + '/ArchiveGet/indexag.js')
-})
-
-// SHOW UI VIA PORTS - Archive Put
-app.get('/ArcPut/indexap.html', (req, res) => {
-   res.sendFile(__dirname + "/ArchivePut/indexap.html")
-})
-
-app.get('ArcPut/indexap.js', (req, res) => {
-   res.sendFile(__dirname + '/ArchivePut/indexap.js')
+   res.sendFile(__dirname + '/LOGIN/indexlg.html')
 })
 
 // USERS - List all Users
