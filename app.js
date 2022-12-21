@@ -63,8 +63,8 @@ app.get('/listAll', (req, res) => {
 })
 
 // USERS - Get user by Id
-app.get('/:arcC', (req, res) => {
-   let arc = arcs.find(x => x.arcC.toString() === req.params.arcC);
+app.get('/:username', (req, res) => {
+   let cusername = cusername.find(x => x.arcC.toString() === req.params.arcC);
    res.send(arc);
 })
 
